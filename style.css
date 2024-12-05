@@ -1,0 +1,266 @@
+/* Center the content */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #66c2ff, #00aaff, #0077b6); /* Ocean blue gradient */
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a subtle animation for underwater movement */
+@keyframes underwaterEffect {
+    0% {
+        background-position: 0 0;
+    }
+    200% {
+        background-position: 0 2000%;
+    }
+}
+
+body {
+    animation: underwaterEffect 30s infinite ease-in-out;
+}
+
+/* Add a subtle "wave" effect by using a semi-transparent overlay */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1); /* Light overlay to mimic light filtering under water */
+    pointer-events: none;
+    animation: waveEffect 15s infinite ease-in-out;
+}
+
+/* Creating an animated wave-like effect */
+@keyframes waveEffect {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.header {
+    margin-bottom: 20px;
+    color: #ffffff; /* White text for contrast */
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    font-size: 16px;
+    text-align: center;
+    flex-direction: column; /* Ensure paragraph goes below the header */
+}
+
+
+/* Container for the whale image and button (Initially Hidden) */
+.whale-container {
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes tilt {
+    0%, 100% {
+        transform: rotate(0deg) translateY(0px);
+    }
+    25% {
+        transform: rotate(-2deg) translateY(-5px);
+    }
+    50% {
+        transform: rotate(0deg) translateY(0px);
+    }
+    75% {
+        transform: rotate(2deg) translateY(5px);
+    }
+}
+
+/* Whale image animation */
+.tilting-whale {
+    width: 600px;
+    animation: tilt 3s infinite ease-in-out;
+}
+
+/* Button positioned over the whale's mouth */
+.mouth-button {
+    position: absolute;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 50px;
+    color: yellow;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    cursor: pointer;
+
+    top: 25%;  /* Move button higher */
+    left: 3%; /* Move button to the left */
+}
+
+.mouth-button:hover {
+    border-color: rgb(17, 0, 255);
+}
+
+/* Hidden message box */
+.hidden {
+    display: none;
+}
+
+/* Message box styling */
+#message-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2719a1;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+    max-width: 500px;
+    position: absolute;
+    top: 50%;  /* Move button higher */
+    left: 28%; /* Move button to the left */
+}
+
+/* Phytoplankton1 container */
+.phytoplankton1-container {
+    position: relative;
+    margin-top: 50px;  /* Space between whale and phytoplankton */
+}
+
+/* Phytoplankton1 movement animation */
+.moving-phytoplankton1 {
+    width: 100px;
+    animation: moveBackAndForth 4s infinite ease-in-out;
+    scale: 0.7;
+}
+
+/* Keyframes for phytoplankton movement */
+@keyframes moveBackAndForth {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at the same position */
+    }
+    50% {
+        transform: translateY(100px); /* Move */
+    }
+    75% {
+        transform: translateY(-100px); /* Move left */
+    }
+}
+
+/* Keyframes for phytoplankton movement */
+@keyframes moveLeftAndRight {
+    0%, 100% {
+        transform: translateX(0); /* Start and end at the same position */
+    }
+    50% {
+        transform: translateX(100px); /* Move */
+    }
+    75% {
+        transform: translateX(-100px); /* Move left */
+    }
+}
+
+/* Phytoplankton2 container (Initially Hidden) */
+.phytoplankton2-container {
+    position: relative;
+    margin-top: 50px;  /* Space between phytoplankton1 and phytoplankton2 */
+}
+
+/* Phytoplankton2 movement animation */
+.moving-phytoplankton2 {
+    width: 100px;
+    animation: moveLeftAndRight 4s infinite ease-in-out;
+    rotate: -90deg;
+    scale: 1.3;
+}
+
+.dms-container {
+    position: relative;
+    margin-top: 50px;
+}
+
+.moving-dms {
+    width: 100px;
+    animation: moveLeftAndRight 4s infinite ease-in-out;
+}
+
+/* Button styles for clear and message toggles */
+.clear-button1, .clear-button2, .dms-button, .message-button1, .message-button2, .dms-message-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid yellow;
+    color: yellow;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Hover effect for buttons */
+.clear-button1:hover, .clear-button2:hover, .dms-button:hover,
+.message-button1:hover, .message-button2:hover, .dms-message-button:hover {
+    border-color: rgb(17, 0, 255);
+}
+/* Styling for the message box (for both phytoplankton) */
+.message-box {
+    margin-top: 20px;
+    max-width: 400px;
+    padding: 15px;
+    background-color: #2719a1;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+    position-anchor: relative;
+    top: 60%;  /* Adjust position of message box */
+    left: 25%; /* Adjust position of message box */
+    display: none; /* Initially hidden */
+}
+
+.dms-message-box {
+    margin-top: 20px;
+    max-width: 600px;
+    padding: 15px;
+    background-color: #2719a1;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+    position-anchor: relative;
+    top: 60%;  /* Adjust position of message box */
+    left: 25%; /* Adjust position of message box */
+    display: none; /* Initially hidden */
+}
+
+.message-button1, .message-button2 {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid yellow;
+    color: yellow;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.message-button1:hover, .message-button2:hover {
+    border-color: rgb(17, 0, 255);
+}
+
+/* DMS Button Styling */
+.dms-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid yellow;
+    color: yellow;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+

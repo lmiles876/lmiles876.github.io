@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Atlantic Right Whale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>DMS and North Atlantic Right Whales: </h1>
+        <h1> The food chain and chemicals to understand whale feeding and migration patterns</h1>
+        <h2>Click on the images to learn more about the relationship between DMS and North Atlantic Right Whales!</h2>
+    </div>
+    
+    <!-- Whale Image Container (Initially Hidden) -->
+    <div class="whale-container hidden">
+        <img src="https://www.fisheries.noaa.gov/s3//styles/original/s3/2024-06/640x427-North-Atlantic-Right-Whale-NOAAFisheries.png" 
+             alt="North Atlantic Right Whale" 
+             class="tilting-whale">
+        <button class="mouth-button" onclick="toggleMessage()">Info</button>
+    </div>
+
+    <!-- Text Box that toggles on click (Initially Hidden) -->
+    <div id="message-box" class="hidden">
+        This research is critical for protecting endangered species like the North Atlantic Right Whale, with only 372 individuals remaining as of October 2024. If whales and DMS levels can be linked, ships could use sensor systems to detect high DMS areas, avoiding vessel strikes and saving these incredible marine giants!  
+    </div>
+
+    <!-- Phytoplankton Image 1 that moves back and forth -->
+    <div class="phytoplankton1-container">
+        <img id="phytoplankton1" src="https://pandorina.org/wp-content/uploads/2022/04/span1-370x370.png" alt="Phytoplankton1" class="moving-phytoplankton1">
+        <button class="clear-button1" onclick="clearPhytoplankton1()">Next</button>
+        <button class="message-button1" onclick="togglePhytoplanktonMessage1()">Info</button>
+        <div id="message-box1" class="message-box"></div> <!-- Message Box for Phytoplankton1 -->
+    </div>
+
+    <!-- Phytoplankton Image 2 that moves back and forth (Initially Hidden) -->
+    <div class="phytoplankton2-container hidden">
+        <img id="phytoplankton2" src="https://www.pngaaa.com/api-download/1226710" alt="Phytoplankton2" class="moving-phytoplankton2">
+        <button class="clear-button2" onclick="clearPhytoplankton2()">Next</button>
+        <button class="message-button2" onclick="togglePhytoplanktonMessage2()">Info</button>
+        <div id="message-box2" class="message-box"></div> <!-- Message Box for Phytoplankton2 -->
+    </div>
+
+    <!-- DMS (Dimethyl Sulfide) Container -->
+    <div class="dms-container hidden">
+        <img id="dms" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Dimethyl-sulfide-3D-balls.png/640px-Dimethyl-sulfide-3D-balls.png" alt="DMS" class="moving-dms">
+        <button class="dms-button" onclick="clearDms()">Next</button>
+        <button class="dms-message-button" onclick="toggleDmsMessage()">Info</button>
+        <div id="dms-message-box" class="dms-message-box"></div> <!-- Message Box for DMS -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
